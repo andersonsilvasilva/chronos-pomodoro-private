@@ -1,8 +1,13 @@
-function App() {
+import { Heading } from './components/Heading';
+
+import './styles/theme.css';
+import './styles/global.css';
+
+export function App() {
   console.log('App component rendered');
   return (
     <>
-      <h1>Olá Mundo</h1>
+      <Heading />
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque sunt,
         fugiat repudiandae dolore velit facilis iste quam deleniti pariatur
@@ -11,5 +16,4 @@ function App() {
     </>
   );
 }
-
 export default App;
