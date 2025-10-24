@@ -4,10 +4,10 @@ import './styles/theme.css';
 import './styles/global.css';
 
 export function App() {
-  console.log('App component rendered');
+  console.log('Oi');
   return (
     <>
-      <Heading />
+      <Heading>Olá Povo!</Heading>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque sunt,
         fugiat repudiandae dolore velit facilis iste quam deleniti pariatur
