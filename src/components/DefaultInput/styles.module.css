@@ -15,7 +15,7 @@
   border: 0.2rem solid var(--primary);
 }
 
-.input::placeholder {
+.input:placeholder {
   color: var(--gray-500);
   font-size: 1.4rem;
   font-style: italic;
