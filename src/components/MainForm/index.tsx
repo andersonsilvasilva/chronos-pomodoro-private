@@ -17,7 +17,7 @@ export function MainForm() {
       </div>
 
       <div className='formRow'>
-        <span>Nesse ciclo descanse por 5 min.</span>
+        <span>Próximo intervalo é de 25 min</span>
       </div>
 
       <div className='formRow'>
