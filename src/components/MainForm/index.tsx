@@ -2,37 +2,33 @@ import { PlayCircleIcon } from 'lucide-react';
 import { Cycles } from '../Cycles';
 import { DefaultButton } from '../DefaultButton';
 import { DefaultInput } from '../DefaultInput';
-import { useTaskContext } from '../../templates/contexts/TaskContext/useTaskContext';
+import { useRef } from 'react';
 
 export function MainForm() {
-  const { setState } = useTaskContext();
+  // const [taskName, setTaskName] = useState('');
+  const taskNameInput = useRef<HTMLInputElement>(null);
 
-  function handleClick() {
-    setState(prevState => ({
-      ...prevState,
-      secondsRemaining: 1500,
-      formattedSecondsRemaining: '25:00',
-    }));
+  function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    console.log('DEU CERTO');
   }
 
   return (
-    <form className='form' action=''>
-      <button onClick={handleClick} type='button'>
-        Testar Context
-      </button>
-
+    <form onSubmit={handleCreateNewTask} className='form' action=''>
       <div className='formRow'>
         <DefaultInput
+          labelText='task'
           id='meuInput'
           type='text'
-          labelText='task'
-          title='Titulo do meu input'
-          placeholder='Digite sua tarefa'
+          placeholder='Digite algo'
+          ref={taskNameInput}
+          // value={taskName}
+          // onChange={e => setTaskName(e.target.value)}
         />
       </div>
 
       <div className='formRow'>
-        <span>Próximo intervalo é de 25 min</span>
+        <p>Próximo intervalo é de 25 min</p>
       </div>
 
       <div className='formRow'>
@@ -40,7 +36,7 @@ export function MainForm() {
       </div>
 
       <div className='formRow'>
-        <DefaultButton icon={<PlayCircleIcon />} color='green' />
+        <DefaultButton icon={<PlayCircleIcon />} />
       </div>
     </form>
   );
