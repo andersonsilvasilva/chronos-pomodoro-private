@@ -1,5 +1,5 @@
-export function formatSecondToMinutes(seconds: number): string {
+export function formatSecondsToMinutes(seconds: number) {
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
-  const remainingSeconds = String(Math.floor(seconds % 60)).padStart(2, '0');
-  return `${minutes}:${remainingSeconds}`;
+  const secondsMod = String(Math.floor(seconds % 60)).padStart(2, '0');
+  return `${minutes}:${secondsMod}`;
 }
