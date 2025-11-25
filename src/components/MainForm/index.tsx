@@ -19,7 +19,7 @@ export function MainForm() {
   const nextCycleType = getNextCycleType(nextCycle);
   
 
-  console.log('nextCycle', nextCycle);
+  // console.log('nextCycle', nextCycle);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -50,21 +50,8 @@ export function MainForm() {
   }
   function handleInterruptCurrentTask( e:React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    
-    // setState(prevState => {
-    //   return {
-    //     ...prevState,
-    //     activeTask: null,
-    //     secondsRemaining: 0,
-    //     formattedSecondsRemaining: '00:00',
-    //     tasks: prevState.tasks.map(task => {
-    //       if  (prevState.activeTask && prevState.activeTask.id === task.id){
-    //         return { ...task, interruptDate: Date.now()};
-    //       }
-    //       return task;
-    //     }),
-    //   };
-    // });
+    dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
+
   }
   
   return (
